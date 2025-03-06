@@ -1,8 +1,153 @@
-html { box-sizing: border-box; }
-*, ::before, ::after { box-sizing: inherit;}
-
-:root {
-  /* zde vytvoř svoje css proměnné */
-
+/* Globální nastavení */
+html {
+  box-sizing: border-box;
+  font-size: 16px; /* Základní velikost písma */
 }
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+/* CSS proměnné */
+:root {
+  --primary-color: #f24e7b;
+  --secondary-color: #931394;
+  --text-color: #70666c;
+  --container-width: 48rem;
+  --border-radius: 12px;
+
+  --font-title: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  --font-size-header: 4rem;
+  --font-size-header-desc: 1.4rem;
+  --font-size-button: 1.4rem;
+  --font-size-article-title: 1.6rem;
+  --font-size-meta: 1rem;
+  --font-size-body: 1.125rem;
+}
+
+/* Hlavička */
+.header {
+  background: url('images/header-bg.jpg') no-repeat;
+  background-size: 92% auto; /* Nastaví obrázek o 20% širší, než je šířka elementu */
+  background-position: center; /* Obrázek bude vycentrován */
+  background-attachment: fixed; /* Pozadí zůstane statické při scrollování */
+  text-align: center;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+
+.header__title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-header);
+  font-weight: 700;
+  text-align: left;
+  
+}
+
+.header__description {
+  font-size: var(--font-size-header-desc);
+  margin-top: 1rem;
+  text-align: left;
+  color: rgb(175, 168, 168);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: var(--font-size-button);
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 40px 40px 40px;
+  border: 2px solid #fff;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  margin-left: -455px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Obsah stránky */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Články */
+.article {
+  display: block; /* Zajistí, že článek bude blokový element */
+  margin-bottom: 50px; /* Mezery mezi články */
+  margin-top: 24px;
+  font-size: 0.9rem;
+  overflow: hidden; /* Aby text nevyčníval mimo článek */
+}
+
+/* Nadpis */
+.article__title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-article-title);
+  color: var(--primary-color);
+  margin-bottom: 10px; /* Mezery pod nadpisem */
+}
+
+/* Odkaz v nadpisu */
+.article__title a {
+  color: inherit;
+  
+}
+
+/* Obrázek */
+.article__image {
+  width: 190px;
+  height: 190px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  float: right; /* Obrázek plave vpravo */
+  margin-left: 20px; /* Mezery mezi obrázkem a textem */
+  margin-bottom: 10px; /* Mezery pod obrázkem */
+}
+
+/* Perex (text pod nadpisem) */
+.article__perex {
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  margin-bottom: 10px; /* Mezery pod perexem */
+}
+
+/* Meta informace (autor, datum) */
+.article__meta {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-meta);
+  color: var(--text-color);
+  margin-top: 0.5rem;
+}
+
+/* Avatar autora */
+.article__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+
+
 
