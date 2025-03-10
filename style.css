@@ -39,12 +39,12 @@ body {
 /* Hlavička */
 .header {
   background: url('images/header-bg.jpg') no-repeat;
-  background-size: 92% auto; /* Nastaví obrázek o 20% širší, než je šířka elementu */
   background-position: center; /* Obrázek bude vycentrován */
   background-attachment: fixed; /* Pozadí zůstane statické při scrollování */
   text-align: center;
   color: #fff;
   padding: 3rem 1rem;
+  background-size: cover;
 }
 
 .header__title {
@@ -59,7 +59,8 @@ body {
   font-size: var(--font-size-header-desc);
   margin-top: 1rem;
   text-align: left;
-  color: rgb(175, 168, 168);
+  color: white;
+  opacity: 0.8;
 }
 
 .button {
